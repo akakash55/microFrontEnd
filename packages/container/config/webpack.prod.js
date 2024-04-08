@@ -15,7 +15,7 @@ const prodConfig = {
         new  ModuleFederationPlugin({
             name: 'container',
             remotes: {
-                marketing: `marketing@${domain}/marketing/remoteEntry.js`  // since baaki ka bhi remoteEntry hi hai (dashboar,auth) so to make it distint from other remoteEntry we are nesting it inside the folder for clarity and understanding
+                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`  // since baaki ka bhi remoteEntry hi hai (dashboar,auth) so to make it distint from other remoteEntry we are nesting it inside the folder for clarity and understanding
             },
             shared: packageJson.dependencies,
         })
