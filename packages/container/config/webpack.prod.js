@@ -17,6 +17,7 @@ const prodConfig = {
             remotes: {
                 marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, // since baaki ka bhi remoteEntry hi hai (dashboard,auth) so to make it distinct from other remoteEntry we are nesting it inside the folder for clarity and understanding
                 auth: `auth@${domain}/auth/latest/remoteEntry.js`,
+                dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
             },
             shared: packageJson.dependencies,
         }),
