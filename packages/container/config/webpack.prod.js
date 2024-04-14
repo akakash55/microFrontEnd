@@ -12,14 +12,15 @@ const prodConfig = {
         publicPath: '/container/latest/',
     },
     plugins: [
-        new  ModuleFederationPlugin({
+        new ModuleFederationPlugin({
             name: 'container',
             remotes: {
-                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`  // since baaki ka bhi remoteEntry hi hai (dashboar,auth) so to make it distint from other remoteEntry we are nesting it inside the folder for clarity and understanding
+                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, // since baaki ka bhi remoteEntry hi hai (dashboard,auth) so to make it distinct from other remoteEntry we are nesting it inside the folder for clarity and understanding
+                auth: `auth@${domain}/auth/latest/remoteEntry.js`,
             },
             shared: packageJson.dependencies,
-        })
-    ]
+        }),
+    ],
 };
 
 module.exports = merge(commonConfig, prodConfig);
